@@ -15,6 +15,7 @@ ENV SATOSA_PIP_TARGET=git+git://github.com/skoranda/SATOSA.git@ebc5a5fbb52f56f70
 ENV SATOSA_MICROSERVICES_SRC_URL=https://github.com/IdentityPython/satosa_microservices/archive/master.tar.gz
 
 RUN pip3 install --upgrade pip setuptools
+RUN pip3 install ldap3
 RUN pip3 install ${SATOSA_PIP_TARGET}
 
 RUN wget -O satosa_microservices.tar.gz ${SATOSA_MICROSERVICES_SRC_URL} \

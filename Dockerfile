@@ -11,19 +11,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libyaml-dev \
         wget
 
-ENV SATOSA_PIP_TARGET=git+git://github.com/skoranda/SATOSA.git@ebc5a5fbb52f56f70afa42f7c24eac5d11eb1c7c
-ENV SATOSA_MICROSERVICES_SRC_URL=https://github.com/IdentityPython/satosa_microservices/archive/master.tar.gz
+ENV SATOSA_PIP_TARGET=git+git://github.com/IdentityPython/SATOSA.git@49da5d4c0ac1a5ebf1a71b4f7aaf04f0e52d8fdb
 
 RUN pip3 install --upgrade pip setuptools
 RUN pip3 install ldap3
 RUN pip3 install ${SATOSA_PIP_TARGET}
-
-RUN wget -O satosa_microservices.tar.gz ${SATOSA_MICROSERVICES_SRC_URL} \
-    && mkdir -p /opt/satosa_microservices \
-    && tar -zxf satosa_microservices.tar.gz -C /opt/satosa_microservices --strip-components=1 \
-    && rm -f satosa_microservices.tar.gz
-
-ENV PYTHONPATH=/opt/satosa_microservices/src/satosa/micro_services
 
 COPY start.sh /tmp/satosa/start.sh
 COPY attributemaps /tmp/satosa/attributemaps

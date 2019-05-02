@@ -13,6 +13,7 @@ SCHAC = 'urn:oid:1.3.6.1.4.1.25178.1.2.'
 SIS = 'urn:oid:1.2.752.194.10.2.'
 UMICH = 'urn:oid:1.3.6.1.4.1.250.1.57.'
 OPENOSI_OID = 'urn:oid:1.3.6.1.4.1.27630.2.1.1.' #openosi-0.82.schema http://www.openosi.org/osi/display/ldap/Home
+ISO_SE = 'urn:oid:1.2.752.'
 
 MAP = {
     'identifier': 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri',
@@ -34,6 +35,7 @@ MAP = {
         EDUPERSON_OID+'12': 'eduPersonPrincipalNamePrior',
         EDUPERSON_OID+'13': 'eduPersonUniqueId',
         EDUPERSON_OID+'16': 'eduPersonOrcid',
+        ISO_SE+'29.4.12' : 'personalIdentityNumber',
         LDAPGVAT_OID+'1': 'PVP-GID',
         LDAPGVAT_OID+'149': 'PVP-BPK',
         LDAPGVAT_OID+'153': 'PVP-OU-OKZ',
@@ -233,6 +235,7 @@ MAP = {
         'osiWorkURL': OPENOSI_OID+'120',
         'ou': X500ATTR_OID+'11',
         'owner': X500ATTR_OID+'32',
+        'personalIdentityNumber': ISO_SE+'29.4.12',
         'physicalDeliveryOfficeName': X500ATTR_OID+'19',
         'postOfficeBox': X500ATTR_OID+'18',
         'postalAddress': X500ATTR_OID+'16',

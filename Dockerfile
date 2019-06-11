@@ -11,8 +11,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libyaml-dev \
         wget
 
-# Build from SATOSA PR 233 until the PR is merged.
-ENV SATOSA_PIP_TARGET=git+git://github.com/IdentityPython/SATOSA.git@refs/pull/233/merge
+# Build from the head of SATOSA master
+ENV SATOSA_PIP_TARGET=git+git://github.com/IdentityPython/SATOSA.git@79abc46f9a870048b9600357cca4ab9e86df8b57
 
 RUN pip3 install --upgrade pip setuptools
 RUN pip3 install ldap3

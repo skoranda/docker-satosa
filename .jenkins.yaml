@@ -8,6 +8,7 @@ triggers:
 git:
   branches:
     - master
+clean_workspace: true
 
 builders:
   - docker
@@ -21,4 +22,5 @@ extra_jobs:
       branch: co_virtual_idp 
       extensions:
           checkout_local_branch: true
+
 

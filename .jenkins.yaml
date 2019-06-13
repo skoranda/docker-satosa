@@ -1,2 +1,32 @@
+---
+environment_variables:
+  COMANAGE_SATOSA_VERSION: "experimental!! remember to change me later on!"
+
 triggers:
-    cron: @daily
+  cron: "@daily"
+
+git:
+    branches:
+      - co_virtual_idp
+      - master
+    extensions:
+      checkout_local_branch: true
+
+extra_jobs:
+  - name: docker-satosa
+    builders:
+      - docker
+    docker_name: docker-satosa
+
+### FIXME: This Satosa-build below is EXPERIMENTAL, awaiting a proper tagged release of Satosa with this func included before building properly!!!
+  - name: comanage-satosa-docker
+    builders:
+      - docker
+    docker_name: comanage-satosa-docker
+    git:
+      branch: co_virtual_idp 
+      extensions:
+          checkout_local_branch: true
+    docker_tags:
+      - "latest"
+

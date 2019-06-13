@@ -10,14 +10,16 @@ git:
     - master
 clean_workspace: true
 
+docker_name: docker-satosa
+
 builders:
   - docker
 
 extra_jobs:
-  - name: comanage-satosa-docker
+  - name: comanage-docker-satosa
     builders:
       - docker
-    docker_name: comanage-satosa-docker
+    docker_name: comanage-docker-satosa
     git:
       branch: co_virtual_idp 
       extensions:

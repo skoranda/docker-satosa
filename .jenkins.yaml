@@ -17,6 +17,8 @@ extra_jobs:
     builders:
       - docker
     docker_name: docker-satosa
+    git:
+      branch: master
 
 ### FIXME: This Satosa-build below is EXPERIMENTAL, awaiting a proper tagged release of Satosa with this func included before building properly!!!
   - name: comanage-satosa-docker

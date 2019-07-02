@@ -11,8 +11,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libyaml-dev \
         wget
 
-# Build from PR 246 until it is merged
-ENV SATOSA_PIP_TARGET=git+git://github.com/IdentityPython/SATOSA.git@refs/pull/246/merge
+# Build satosa using a specific commit
+ENV SATOSA_PIP_TARGET=git+git://github.com/IdentityPython/SATOSA.git@efc709590977a52164f3ccf67aee45b63e4f6008
 
 # Build pysaml2 using a specific commit
 ENV PYSAML2_PIP_TARGET=git+git://github.com/IdentityPython/pysaml2.git@322a5f64006cf795179005f772b494e6030028bb

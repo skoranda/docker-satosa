@@ -3,9 +3,10 @@ FROM python:3.7.4-buster
 RUN apt-get update && apt-get install -y --no-install-recommends \
         xmlsec1
 
-# Until SATOSA PR 252 is merged and a release cut install directly from
-# the Github hidden reference for the merged PR.
-RUN pip install git+https://github.com/IdentityPython/SATOSA.git@refs/pull/252/merge \
+ENV SATOSA_SRC_URL=git+https://github.com/IdentityPython/SATOSA.git@803bf24afc49565da8d4d023962515874cfba2f7
+
+# Use a specific commit until a SATOSA release is made with necessary functionality.
+RUN pip install ${SATOSA_SRC_URL} \
     && pip install ldap3
 
 COPY start.sh /tmp/satosa/start.sh

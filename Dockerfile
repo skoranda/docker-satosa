@@ -1,11 +1,11 @@
-FROM python:3.7.4-buster
+FROM python:3.7.6-buster
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         xmlsec1
 
-ENV SATOSA_SRC_URL=git+https://github.com/IdentityPython/SATOSA.git@803bf24afc49565da8d4d023962515874cfba2f7
-
 # Use a specific commit until a SATOSA release is made with necessary functionality.
+ENV SATOSA_SRC_URL=git+https://github.com/IdentityPython/SATOSA.git@0d521b160c779cd1d962eb232692034c0155df9d
+
 RUN pip install ${SATOSA_SRC_URL} \
     && pip install ldap3
 
